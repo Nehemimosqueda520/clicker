@@ -1,22 +1,24 @@
 import './App.css';
 import { Button } from './components/Button';
 import { Clicker } from './components/Clicker';
+import { useState } from 'react';
 
 function App() {
 
+  const [clickNumbers, setClickNumbers] = useState(0);
   const click = () => {
-    console.log ("click");
-  }
+   setClickNumbers(clickNumbers + 1) ;
+  };
 
   const restart = () => {
-    console.log ("restart");
-  }
+    setClickNumbers(0); 
+  };
 
   return (
     <div className="App">
       <div className="clicker-container">
       <Clicker 
-      clickNumbers = "5"/>
+      clickNumbers = {clickNumbers}/>
 
       <div className='buttons-container'>
 
